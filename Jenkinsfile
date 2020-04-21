@@ -1,13 +1,13 @@
 pipeline {
   agent {
     docker {
-      image "node:8-alpine"      
+      image "node:12-ubuntu"      
     }
   }
   stages {
     stage("Build") {
       steps {
-        sh "apk add --no-cache mongodb mongodb-tools"
+        sh "apt install mongodb"
         sh "chmod +x ./scripts/dropdb.sh"
         sh "npm install"
       }
