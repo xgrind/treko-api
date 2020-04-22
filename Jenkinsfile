@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image "node:8-alpine:3.9.5"      
+      image "node:8-alpine:3.9"      
       args "--network=skynet"
     }
   }
