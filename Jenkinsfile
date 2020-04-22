@@ -1,14 +1,14 @@
 pipeline {
   agent {
     docker {
-      image "node:8-alpine"      
+      image "node:8-alpine:3.9.5"      
       args "--network=skynet"
     }
   }
   stages {
     stage("Build") {
       steps {
-        sh "apk add --no-cache mongodb-tools"
+        sh "apk add --no-cache mongodb mongodb-tools"
         sh "chmod +x ./scripts/dropdb.sh"
         sh "npm install"
       }
