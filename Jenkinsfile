@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image "nodejs:10-ubuntu"      
+      image "node:8-ubuntu"      
       args "--network=skynet"
     }
   }
